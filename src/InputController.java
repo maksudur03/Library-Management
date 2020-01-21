@@ -34,6 +34,7 @@ public class InputController {
         System.out.println("ENTER BOOK PRICE");
         uncheckedPrice = priceValidation();
         book.setPrice(uncheckedPrice);
+        System.out.println();
 
         return book;
     }

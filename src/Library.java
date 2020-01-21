@@ -13,6 +13,12 @@ public class Library {
 
     }
     public Book searchById(long bookId){
+        for (Book book : bookList) {
+            if (bookId == book.getId()) {
+                return book;
+            }
+        }
+        System.out.println("Book not found");
         return null;
     }
     public ArrayList<Book> searchByName(String bookName){
