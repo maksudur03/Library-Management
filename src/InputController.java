@@ -15,7 +15,7 @@ public class InputController {
         boolean hasRepetition = false;
         System.out.println("ENTER BOOK ID");
         while (!hasRepetition) {
-            uncheckedId = idValidation();
+            uncheckedId =MainApp.getLongInput();
             hasRepetition = checkForRepetition(uncheckedId,bookList);
         }
         book.setId(uncheckedId);
@@ -43,14 +43,14 @@ public class InputController {
         String content;
         while (true) {
             content = scanner.next();
-            if (content.length() >= 10 && content.length() <= 256) {
+            if (content.length() >= 10 && content.length() <= 25) {
                 break;
             } else {
-                if (content.length() < 5) {
+                if (content.length() < 10) {
                     System.out.println("Content is too small.Try Again");
 
                 }
-                if (content.length() > 20) {
+                if (content.length() > 25) {
                     System.out.println("Content is too large.Try Again");
                 }
             }
@@ -58,7 +58,7 @@ public class InputController {
         return content;
     }
 
-    public String authorRangeCheck() {
+    public String authorRangeCheck(){
         String author;
         while (true) {
             author = scanner.next();
@@ -85,19 +85,6 @@ public class InputController {
             }
         }
         return true;
-    }
-
-    public long idValidation() {
-        long input = 0;
-        while (input == 0) {
-            try {
-                input = scanner.nextLong();
-            } catch (InputMismatchException exception) {
-                System.out.println("Invalid input. Try again");
-            }
-            scanner.nextLine();
-        }
-        return input;
     }
 
     public double priceValidation() {

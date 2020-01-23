@@ -21,7 +21,9 @@ public class Book {
         this.content = content;
     }
 
-    public void setPrice(double price) { this.price = price; }
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
     public long getId() {
         return id;
@@ -39,18 +41,20 @@ public class Book {
         return content;
     }
 
-    public double getPrice() { return price; }
+    public double getPrice() {
+        return price;
+    }
 
     public String showBook() {
         return "Book Details " +
                 "\nid='" + id + '\'' +
                 "\nname='" + name + '\'' +
                 "\nauthor='" + author + '\'' +
-                "\ncontent='" + content + '\''+
-                "\nprice='" + price + '\''+"\n";
+                "\ncontent='" + content + '\'' +
+                "\nprice='" + price + '\'' + "\n";
     }
 
-    public String showBookSummary(){
+    public String showBookSummary() {
         return "ID:" + getId() + " NAME:" + getName() + " Author:" + getAuthor() + '\n';
     }
 }
