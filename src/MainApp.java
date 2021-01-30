@@ -175,7 +175,7 @@ public class MainApp {
         return input;
     }
 
-    public long getLongInput() {
+    public static long getLongInput() {
         Scanner scanner = new Scanner(System.in);
         long input = -1;
         while (input == -1) {
